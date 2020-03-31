@@ -1,0 +1,35 @@
+/* body {
+    background: linear-gradient(rgb(70, 70, 70), rgb(180, 180, 180)); 
+} */
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 10rem;
+}
+
+button {
+    display: flex;
+    width: 20%;
+    size: 32px;
+    justify-content: center;
+    align-content: space-around;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.output {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+}
+

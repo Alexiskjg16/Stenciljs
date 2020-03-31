@@ -12,7 +12,7 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <h1>Component: One</h1>
+          <h1>Steciljs</h1>
         </header>
 
         <main>

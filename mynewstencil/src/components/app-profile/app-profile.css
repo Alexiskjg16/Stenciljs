@@ -1,4 +1,4 @@
-.dropbtn {
+#dropDown {
     background-color: #3498DB;
     color: white;
     padding: 16px;
@@ -7,13 +7,9 @@
     cursor: pointer;
   }
   
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-  }
-  
+
   /* Dropdown Content (Hidden by Default) */
-  #myDropdown {
+  .myDropdown {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -30,3 +26,24 @@
     display: block;
   }
   
+  ul {
+      border: .05mm solid black;
+      background-color: rgb(252, 247, 247);
+      width: 25%;
+      padding: 4mm;
+  }
+
+  li {
+      list-style: none;
+      text-decoration: none;
+      padding-left: 5mm;
+  }
+
+  button {
+      margin-bottom: -4mm;
+  }
+
+  header {
+      display: flex;
+      justify-content: center;
+  }
