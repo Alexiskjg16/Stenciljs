@@ -7,11 +7,21 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  MyComponent,
+} from './components/my-component/my-component';
 
 export namespace Components {
   interface MyComponent {
     'currentRoll': number;
+    'secondRoll': number;
+    'winOrLose': string;
+  }
+  interface ResultComponent {
+    'firstResult': number;
+    'resultsOfRoll': MyComponent;
+    'secondResult': number;
+    'somethingHappens': string;
   }
 }
 
@@ -23,18 +33,34 @@ declare global {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+
+  interface HTMLResultComponentElement extends Components.ResultComponent, HTMLStencilElement {}
+  var HTMLResultComponentElement: {
+    prototype: HTMLResultComponentElement;
+    new (): HTMLResultComponentElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'result-component': HTMLResultComponentElement;
   }
 }
 
 declare namespace LocalJSX {
   interface MyComponent {
     'currentRoll'?: number;
+    'secondRoll'?: number;
+    'winOrLose'?: string;
+  }
+  interface ResultComponent {
+    'firstResult'?: number;
+    'resultsOfRoll'?: MyComponent;
+    'secondResult'?: number;
+    'somethingHappens'?: string;
   }
 
   interface IntrinsicElements {
     'my-component': MyComponent;
+    'result-component': ResultComponent;
   }
 }
 
@@ -45,6 +71,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'result-component': LocalJSX.ResultComponent & JSXBase.HTMLAttributes<HTMLResultComponentElement>;
     }
   }
 }
